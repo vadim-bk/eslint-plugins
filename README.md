@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Custom ESLint Plugins Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates how to create and use custom ESLint plugins to enforce specific code quality rules in your React application. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Custom ESLint Plugins
+
+This project includes examples of custom ESLint plugins located in the `eslint-plugin-local` directory:
+
+- `no-variable-strings`: A rule that prevents the use of variable strings in specific contexts
+- Additional custom rules can be added following the same pattern
+
+### How to Create a Custom ESLint Plugin
+
+1. Create a directory for your plugin (e.g., `eslint-plugin-local`)
+2. Create an `index.js` file to export your rules
+3. Create individual rule directories with their implementation and documentation
+4. Configure ESLint to use your custom plugin
 
 ## Available Scripts
 
@@ -29,18 +43,24 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm run lint`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Runs ESLint to check your code against both standard and custom rules.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Adding Your Own Custom Rules
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To add a new custom ESLint rule:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Create a new directory in `eslint-plugin-local` with your rule name
+2. Create an `index.js` file with your rule implementation
+3. Create a `doc.md` file with documentation for your rule
+4. Export your rule in the main `eslint-plugin-local/index.js` file
+5. Update your ESLint configuration to use the new rule
 
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+For more information about creating ESLint plugins, see the [ESLint Developer Guide](https://eslint.org/docs/developer-guide/working-with-plugins).
